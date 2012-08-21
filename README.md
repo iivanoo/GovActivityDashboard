@@ -1,6 +1,8 @@
 GovActivityDashboard
 ====================
 
+A LIVE DEPLOYMENT of the GovActivityDashboard can be found [here](http://iivanoo.kodingen.com).
+
 Gov Activity Dashboard is a dashboard that allows the user to interactively get two kinds of information:
 
 1. *WHO* is doing censorship. That is, how active are governments in performing some kind of censorship on the Internet
