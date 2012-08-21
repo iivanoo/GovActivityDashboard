@@ -1,0 +1,6 @@
+Data Sources:
+http://www.google.com/transparencyreport/
+http://www.google.com/publicdata/home
+http://www.freebase.com/
+http://www.worldbank.org/
+http://library.trincoll.edu/timeseries/index.cfm

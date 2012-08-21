@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it_IT" lang="it_IT">
+  <head>
+    <title>Gov Activity Dashboard</title>
+    <meta http-equiv="Content-Encoding" content="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+    charset="UTF-8" />
+    <link rel="icon" href="img/icon.png" />
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+    <link rel="Stylesheet" type="text/css" href="css/ui.slider.extras.css" />
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    
+    <script type="text/javascript" src="https://raw.github.com/mbostock/d3/master/d3.v2.min.js"></script>
+    
+    <!-- <script type="text/javascript"
+    src="http://mbostock.github.com/d3/d3.js?2.5.0"></script>
+    <script type="text/javascript"
+    src="http://mbostock.github.com/d3/d3.csv.js?2.5.0"></script>
+    <script type="text/javascript"
+    src="http://mbostock.github.com/d3/d3.geom.js?2.5.0"></script>
+    <script type="text/javascript"
+    src="http://mbostock.github.com/d3/d3.layout.js?2.5.0"></script> -->
+    
+    <link rel="stylesheet" type="text/css" href="css/core.css" />
+    <link rel="stylesheet" href="css/lateral_sliding.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/selectToUISlider.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+    <script type="text/javascript" src="js/hashmap.js"></script>
+    <script type="text/javascript" src="js/insights.js"></script>
+    <script type="text/javascript" src="js/timeslider.js"></script>
+    <script type="text/javascript" src="js/gtr.js"></script>
+    <script type="text/javascript" src="js/herdict.js"></script>
+    <script type="application/javascript" src="js/news.js"> </script>
+    <script type="text/javascript" src="js/date.format.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/gtr.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/countryLookupCode.js"></script>
+    <script type="text/javascript" src="js/treemap.js"></script>
+    <script type="text/javascript" src="js/stackedAreaChart.js"></script>
+    <script type="text/javascript" src="js/jsDate.js"></script>
+    
+    <script type="text/javascript">
+      //display_loading_screen();
+      loadData();
+      google.load('visualization', '1', {'packages' : [ 'geochart' ] });
+      google.load('visualization', '1', {packages: ['treemap']});
+      google.load('visualization', '1', {packages: ['corechart']});
+      /*$(document).ready(function() {
+      display_loading_screen();
+      });*/
+      //google.setOnLoadCallback(drawHerdictMap);
+      
+    </script>
+    
+    <!-- Lateral Sliding -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+      $(".trigger").click(function(){
+      $(".panel").toggle("fast");
+      $(this).toggleClass("active");
+      return false;
+      });
+      });
+    </script>
+    
+    <script type="text/javascript">
+    
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27669387-1']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    
+    </script>
+  </head>
+  <body>
+    
+    <div id="loading_screen">
+      <h1 style="color: white;">Loading...</h1>
+      <h3>Please Wait...</h3>
+    </div>
+    
+    <script type="text/javascript">display_loading_screen();</script>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="./index.html">Gov Activity Dashboard</a>
+          <p class="pull-right"><a href="./about.html">ABOUT</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="content">
+        <div class="hero-unit">
+          <div id="filter-box">
+            <form type="get" id="filter-form">
+              <input name="domain-filter" type="text"
+              placeholder="Filter by domain..." />
+              <button type="input" class="btn small primary">Filter</button>
+            </form>
+            <div class="tag-cloud"></div>
+            <div class="country-cloud"></div>
+          </div>
+          <div id='map_canvas'><img src=""/></div>
+          <div id="mapComboBox">
+            <form method="get" action="">
+              <fieldset>
+                <input type="radio" name="mapType" id="herdict" onClick="drawHerdictMap();" checked="true"/>Unreachable resources</label> <input
+                type="radio" name="mapType" id="political" onClick="drawPoliticalMap();"/>Largest government party orientation</label>
+              </fieldset>
+            </form>
+          </div>
+          <div>
+            <form action="#">
+              <fieldset id="time-slider">
+                <select name="timeSliderStart" id="timeSliderStart">
+                </select> <select name="timeSliderStop" id="timeSliderStop">
+                </select>
+              </fieldset>
+            </form>
+          </div>
+          <div id="gtrChart"></div>
+          <div id="legendaContentRemovalGtr">Google Content Removal
+            Requests per semester</div>
+          <br />
+          <div id="legendaUserDataGtr">Google User Data Requests per
+            semester</div>
+        </div>
+        
+        <div class="row">
+          <h2>Potential effects</h2>
+          <!-- <div id="insights-box-header"></div> -->
+          <!-- <div id="news-header"></div> -->
+          <div id="insights-box" align="center">
+            <!--<script type="text/javascript" src="http://www.gmodules.com/ig/ifr?url=http%3A%2F%2Fwww.google.com%2Fig%2Fmodules%2Fgoogle_insightsforsearch_interestovertime_searchterms.xml&amp;up__property=empty&amp;up__search_terms=censorship&amp;up__location=empty&amp;up__category=0&amp;up__time_range=empty&amp;up__compare_to_category=false&amp;synd=open&amp;w=320&amp;h=350&amp;lang=en-US&amp;title=Google+Insights+for+Search&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+            <script type="text/javascript" src="http://www.gmodules.com/ig/ifr?url=http%3A%2F%2Fwww.google.com%2Fig%2Fmodules%2Fgoogle_insightsforsearch_interestovertime_searchterms.xml&amp;up__property=empty&amp;up__search_terms=censorship&amp;up__location=empty&amp;up__category=0&amp;up__time_range=empty&amp;up__compare_to_category=false&amp;synd=open&amp;w=320&amp;h=350&amp;lang=en-US&amp;title=Google+Insights+for+Search&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+            -->
+          </div>
+          <!--<div id="news"></div> --> 
+        </div>
+        
+        <div class="row" id="domainDetails">
+          <h2>Domains details (top 10 reported unavailable domains)</h2>
+          <div style="float:left;">
+            <div id="treemap"> </div>
+            <DIV>
+            <dl>
+              <dt style="background: #FF9966; margin: 2px 0;float:left;clear:left;">&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+              <dd style="margin: 2px 0;float:left;">&nbsp; Social</dd>
+              <dt style="background: #009966; margin: 2px 0;float:left;clear:left;">&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+              <dd style="margin: 2px 0;float:left;">&nbsp; Internet tool</dd>
+              <dt style="background: #6666CC; margin: 2px 0;float:left;clear:left;">&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+              <dd style="margin: 2px 0;float:left;">&nbsp; Political</dd>
+              <dt style="background: #A8A8A8; margin: 2px 0;float:left;clear:left;">&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+              <dd style="margin: 2px 0;float:left;">&nbsp; Other category</dd>
+            </dl>
+            </DIV>
+          </div>
+          <!-- <div id="treemap"> </div> -->
+          <div id="stackedAreaChart"></div>
+          <!-- <dl>
+              <dt style="background: #FF9966; margin: 2px 0;float:left;clear:left;">&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+              <dd style="margin: 2px 0;float:left;">&nbsp; Social</dd>
+              <dt style="background: #009966; margin: 2px 0;float:left;clear:left;">&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+              <dd style="margin: 2px 0;float:left;">&nbsp; Internet tool</dd>
+              <dt style="background: #6666CC; margin: 2px 0;float:left;clear:left;">&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+              <dd style="margin: 2px 0;float:left;">&nbsp; Political</dd>
+              <dt style="background: #A8A8A8; margin: 2px 0;float:left;clear:left;">&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+              <dd style="margin: 2px 0;float:left;">&nbsp; Other category</dd>
+            </dl>  -->
+        </div>  
+      </div>
+    </div>
+    <!-- Sliding laterale -->
+    <div class="panel">
+      <h3>Description:</h3>
+      <p>Gov Activity Dashboard is a dashboard that allows the user to interactively get two kinds of  information:
+        <ul>
+          <li type=1 value="1">WHO is doing censorship. That is, how active are governments in performing some kind of censorship on the Internet</li>
+          <li type=1 value="2">the EFFECTS of censorship on the people. That is, how people "react" to censorship. It helps to answer this question: "is people from a specific country" aware of being censored"?</li>
+        </ul>
+      </p>
+      
+      <p>
+        For more details about this project and to have some explanations about our data visualitations, <a HREF="./about.html">click here</a>
+      </p>
+      
+      <div>
+        <h3>Who we are:</h3>
+        <dl>
+          <dt style="float:left;clear:left;">
+            <a HREF="http://www.di.univaq.it/malavolta/">
+              <img src="img/ivano.png" alt="Ivano Malavolta" title="Ivano Malavolta" BORDER="0"/>
+            </a>
+          </dt>
+          <DD style="float:left;">
+            <a HREF="http://www.di.univaq.it/malavolta/">Ivano Malavolta</a>
+          </DD>
+          <dt style="float:left;clear:left;">
+            <a HREF="http://it.linkedin.com/pub/mirco-franzago/28/77/320/">
+              <img src="img/mirco.png" alt="Mirco Franzago" title="Mirco Franzago" BORDER="0"/>
+            </a>
+          </dt>
+          <DD style="float:left;">
+            <a HREF="http://it.linkedin.com/pub/mirco-franzago/28/77/320/">Mirco Franzago</a>
+          </DD>
+          <dt style="float:left;clear:left;">
+            <a HREF="http://www.blaskino.net/">
+              <img src="img/vasco.png" alt="Vasco Gallotti" title="Vasco Gallotti" BORDER="0"/>
+            </a>
+          </dt>
+          <DD style="float:left;">
+            <a HREF="http://www.blaskino.net/">Vasco Gallotti</a>
+          </DD>
+        </dl>
+      </div>
+      <!-- <div style="clear:both;"></div> -->
+    </div>
+    <a class="trigger" href="#">infos</a>
+    
+  </body>
+</html>

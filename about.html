@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Gov Activity Dashboard - About</title>
+<link rel="stylesheet" type="text/css" href="css/core.css" />
+<link rel="stylesheet" type="text/css" href="css/theme.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="./about.html">Gov Activity Dashboard</a>
+        <p class="pull-right"><a href="./index.html">Go back to main page</a></p>
+      </div>
+    </div>
+  </div>
+
+<div class="container-fluid">
+    <div class="content">
+ <div class="row">
+	<h3>Description:</h3>
+	<p>Gov Activity Dashboard is a dashboard that allows the user to interactively get two kinds of  information:
+		<ul>
+			<li type=1 value="1">WHO is doing censorship. That is, how active are governments in performing some kind of censorship on the Internet</li>
+			<li type=1 value="2">the EFFECTS of censorship on the people. That is, how people "react" to censorship. It helps to answer this question: "is people from a specific country" aware of being censored"?</li>
+		</ul>
+	</p>
+	<p>Information about the first point is provided by means of three kinds of interactive charts:
+		<ul>
+			<li type=A value="A">each country in the central geographical map is coloured depending on how many days and how many websites are unavailable over time;</li>
+			<li type=A value="B">the treemap shows the top 10 censored websites in a given time window. The area of a rectangle in the treemap is directly proportional to the number of days the website is not available. The color of each rectangle in the treemap is set depending on the category of the website (categories can be: social, internet tool, political, other);</li>
+			<li type=A value="C">the stacked area chart shows the top 10 websites not available month-by-month. The x-coordinate represents the months within the time window, whereas the y-coordinate represents the total number of days that a website was not available in a specific month.</li>
+		</ul>
+	</p>
+	<p>Information about the second point (that is, people reaction) is shown  by means of two representations:
+		<ul>
+			<li type=A value="A">a line chart representing how the keyword "internet censorship" has been searched on the Google Search engine. More specifically, it says how "trendy" is that keyword over time. By doing this, our dashboard is able to show, depending on the day, if people is currently aware of being censored. We can assume this because a typical human behavior when some relevant phenomenon is happening, he/she tries to get more informed on a the phenomenon itself (internet censoriship in our case). So, more "trendy" is internet censorship in a specific time window, more "aware" may be people of being censored;</li>
+			<li type=A value="B">world news related to internet censorship and a specific country are shown. This is because journalists are usually the first people getting informed about censorship-related issues, and they may be an interesting test for checking whether actually internet censorship is known in a given period in a specific country. <i>UPDATE: since the REST API of Digg is no longer available, this part of the project is currently not active.</i></li>
+		</ul>
+	</p>
+	<p>
+	Users can filter all the data described above (1) by domain, (2) by country, and (3) by a reference time window.
+	</p>
+	<h3>Used Sources:</h3>
+		<ul>
+			<li type="circle">Herdict for getting websites availability over time and by country (persisted in the cloud as a Google Fusion Table)</li>
+			<li type="circle">Google Transparency Report to get information about governmental activity with respect to censorship</li>
+			<li type="circle">Google Search Insights to get information on whether people is aware of being censored</li>
+			<li type="circle">Digg.com to get world news related to censorship in various countries. It is accessed via a REST service. <i>UPDATE: the Digg REST service is no longer available.</i></li>
+			<li type="circle">Database of Political Institutions 2010 by T.Beck, P.E.Keefer and G.R.Clarke to get information about the government orientation (that is, center, left, or right-wing) in a country, year by year</li>
+		</ul>
+	<h3>Used Javascript libraries:</h3>
+		<ul>
+		<li type="circle">d3.js for rendering pie charts</li>
+		<li type="circle">Google Chart API for rendering the Geographical map, the treemap chart and the stacked area chart</li>
+		<li type="circle">jQuery (http://jquery.com)</li>
+		<li type="circle">DateFormat by Steven Levithan</li>
+		<li type="circle">HashMap by Giorgio Stefanoni</li>
+		<li type="circle">selectToUISlider by Scott Jehl</li>
+		<li type="circle">jsDate by Rob Eberhardt (Slingshot Solutions)</li>
+		<li type="circle">Sliding panel by Jon Phillips (SpyreStudios)</li>
+		</ul>
+	<h3>Who we are:</h3>
+	<dl>
+		<dt style="float:left;clear:left;margin-bottom: 30px;">
+			<a HREF="http://www.di.univaq.it/malavolta/">
+			<img src="img/ivano.png" alt="Ivano Malavolta" title="Ivano Malavolta" BORDER="0"/>
+			</a>
+		</dt>
+		<DD style="float:left;">
+		<a HREF="http://www.di.univaq.it/malavolta/">Ivano Malavolta</a>
+		</DD>
+		
+		<dt style="float:right;clear:right;margin-bottom: 30px;">
+			<a HREF="http://www.blaskino.net/">
+			<img src="img/vasco.png" alt="Vasco Gallotti" title="Vasco Gallotti" BORDER="0"/>
+			</a>
+		</dt>
+		<DD style="float:right;">
+		<a HREF="http://www.blaskino.net/">Vasco Gallotti</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</DD>
+		
+		<dt style="float:left;clear:left;margin-bottom: 30px;">
+			<a HREF="http://it.linkedin.com/pub/mirco-franzago/28/77/320/">
+			<img src="img/mirco.png" alt="Mirco Franzago" title="Mirco Franzago" BORDER="0"/>
+			</a>
+		</dt>
+		<DD style="float:left;">
+		<a HREF="http://it.linkedin.com/pub/mirco-franzago/28/77/320/">Mirco Franzago</a>
+		</DD>
+	</dl>
+
+<!-- <div style="clear:both;"></div> -->
+</div>
+</div>
+</div>
+
+</body>
+</html>

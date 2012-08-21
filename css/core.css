@@ -1,0 +1,221 @@
+#loading_screen {  
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 3000px;
+  width: 100%;
+  background-color: black;
+  opacity:.9;
+  color: white;  
+  text-align: center;
+  padding-top: 100px;
+  z-index: 1000;
+}
+
+.container-fluid {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+http://mbostock.github.com/d3/d3.csv.js?2.5.0li {
+	list-style: none;
+}
+
+.container-fluid > .sidebar {
+    float: right;
+}
+
+.container-fluid > .content {
+    margin-left: 0px;
+    /* margin-right: 240px; *//* sidebar space */
+}
+
+.hero-unit {
+    background-image: url("../img/bg-smoke.png");
+    padding: 40px;
+}
+
+.row {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: whiteSmoke;
+    border-radius: 6px;
+    padding: 30px;
+    margin-left: 0px;
+	margin-bottom: 30px;
+}
+
+#filter-form {
+    display: inline;
+}
+
+.tag-cloud {
+    display: inline;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+}
+
+.tag span {
+    background: #b1c478;
+    padding: 1px 8px 1px 12px;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+.tag a {
+    color: #8fa271;
+    background: #6D6B5F;
+    padding: 1px 9px 1px 7px;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    text-decoration: none;
+}
+
+.country-cloud {
+    display: inline;
+}
+
+.country {
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+}
+
+.country span {
+    background: #CC385E;
+    padding: 1px 8px 1px 12px;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+
+.country a {
+    color: #8fa271;
+    background: #6D6B5F;
+    padding: 1px 9px 1px 7px;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    text-decoration: none;
+}
+
+#map_canvas {
+	margin-top: 10px;
+    height: 450px;
+}
+
+#insights-box-header {
+    padding: 2px;
+    float: left;
+    display: block;
+    border-radius: 5px; 
+    width: 450px;
+}
+
+#insights-box {
+  padding: 2px;
+  display: block;
+  height: 800;
+}
+
+#insights-box>:nth-child(1) {
+    float: left;
+}
+
+#insights-box>:nth-child(2) {
+    float: right;
+}
+
+#news-header {
+    padding: 2px;
+    float:right;
+    display: inline-block;
+    border-radius: 5px;
+    width: 450px;
+}
+
+#news {
+  border-radius: 5px;
+  padding: 2px;
+  float:right;
+  display: inline-block;
+  background-color:#fff;
+  width: 450px;
+  height: 800;
+}
+
+.digg {
+    margin: 3px;
+    border-radius: 5px;
+    height: 70px;
+    padding: 3px;
+    border-bottom: 1px solid #cdc9c9;
+}
+
+.diggImage {
+    float: left;
+    border-radius: 5px;
+    clear: left;
+    margin: 3px;
+}
+
+#mapComboBox {
+	color: white;
+}
+
+#herdict {
+	margin-right: 5px;
+}
+
+#political {
+	margin-right: 5px;
+	margin-left: 10px;
+}
+
+#time-slider {
+    margin-top: 30px;
+}
+
+#chart {
+	color: #333;
+	position: relative;
+	margin-top: 20px;
+}
+
+.invisible {
+	display: none;
+}
+
+#legendaContentRemovalGtr {
+	border-radius: 5px; 
+	background: #1f77b4;
+	display: inline-block;
+	padding: 2px;
+	color: #aec7e8;
+	margin: 3px;
+}
+
+#legendaUserDataGtr {
+	border-radius: 5px; 
+	background: #aec7e8;
+	display: inline-block;
+	padding: 2px;
+	color: #1f77b4;
+	margin: 3px;
+}
+
+#stackedAreaChart {
+    margin: 10px;
+    width: 500px;
+    height: 400px;
+    float: right;
+}
+
+#treemap {
+    margin: 10px;
+    width: 400px;
+    height: 300px;
+    /* float: left; */
+}
+
+
