@@ -1,7 +1,7 @@
 GovActivityDashboard
 ====================
 
-A LIVE DEPLOYMENT of the GovActivityDashboard can be found [here](http://iivanoo.kodingen.com).
+**A LIVE DEPLOYMENT of the GovActivityDashboard can be found [here](http://iivanoo.kodingen.com).**
 
 Gov Activity Dashboard is a dashboard that allows the user to interactively get two kinds of information:
 
@@ -40,3 +40,5 @@ Used Javascript libraries
 + *selectToUISlider* by Scott Jehl
 + *jsDate* by Rob Eberhardt (Slingshot Solutions)
 + *Sliding panel* by Jon Phillips (SpyreStudios)
+
+**A LIVE DEPLOYMENT of the GovActivityDashboard can be found [here](http://iivanoo.kodingen.com).**
